@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Circles and Arrows</title>
+<style type="text/css">
+.setup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 10px;
+  width: 25%;
+  border-right: 3px double black;
+}
+.fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.input {
+  font-family: monospace;
+  font-size: large;
+}
+.output {
+  position: absolute;
+  left: 25%;
+  right: 0;
+  top: 0;
+  bottom: 10px;
+  padding: 1em;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="setup" class="setup">
+  <form id="description-form" class="fill">
+    <textarea id="description" class="fill input"></textarea>
+  </form>
+</div>
+
+<div id="output" class="output">
+
+</div>
+
+<script src="js/lib/jquery-1.7.2.min.js"></script>
+<script src="js/lib/easeljs-0.4.2.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+  var app = new CirclesAndArrows(window, $);
+  app.setupCanvas($('#output'));
+  app.bindInput($('#description'));
+  app.begin();
+</script>
+</body>
+</html>
